@@ -6,7 +6,7 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # заменишь на нужный URL
+            return redirect('home')  # заменишь на нужный URL
     else:
         form = CustomUserCreationForm()
     return render(request, 'main/register.html', {'form': form})
